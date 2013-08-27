@@ -74,7 +74,7 @@ date1 < date2
 
 **datetime**
 
-类方法  
+类方法(返回datetime对象)  
 
 - datetime.datetime(year, month, day[, hour[, minute[, second[, microsecond[, tzinfo]]]]])    
 - datetime.today()  等同于 datetime.fromtimestamp(time.time())，tzinfo 为None.
@@ -113,29 +113,6 @@ datetime.time([hour[, minute[, second[, microsecond[, tzinfo]]]]])
 
 time 模块在Uninx平台上的时间纪元从1970年1月1日开始，截止点是2038年。该模块不能处理1970年前或是2038年后的时间。
 
-**函数**   
-
-- time.time() 返回从纪元开始的秒数，是一个浮点数。  
-- time.clock()在Unix上返回当前处理器的时间。
-
-- time.gmtime([secs])  把秒数转化为GMT时间，返回time.struct_time。  
-  gmtime(0) 返回unix时间，1970年1月1日。
-- time.localtime([secs]) 将秒数转化为本地时间，返回 time.struct_time。   (tm_year=2013, tm_mon=3, tm_mday=28, tm_hour=14, tm_min=48, tm_sec=26, tm_wday=3, tm_yday=87, tm_isdst=0) 
-
-- time.mktime(t) localtime()的逆过程，参数为 struct_time or full 9-tuple。返回时间截，一个类似time.time() 一样的浮点数。
-
-- time.asctime([t]) 把  gmtime() 或  localtime() 返回的tunple 或struct_time 转化为本地时间字符串。如果未指定t,则使用 localtime() 。如：'Sun Jun 20 23:21:05 1993'。
-- time.ctime([secs]) 把秒数表示为当前本地时间字符串。如果未指定参数，则使用time().'Thu Mar 28 14:43:37 2013'   
-
-- time.sleep(secs)  暂停当前线程指定的秒数。参数可以是浮点数。
-
-
-
-- time.strftime(format[, t]) 格式化时间为字符串
-- time.strptime(string[, format]) 将字符串转化为时间，返回struct_time
-
-
-
 **类**
 
 time.struct_time
@@ -152,7 +129,27 @@ gmtime(), localtime(), and strptime() 时间序列的返回类型. 是一个命�
 	7	tm_yday	range [1, 366]
 	8	tm_isdst	0, 1 or -1; see below
 
+**函数**   
 
+- time.time() 返回从纪元开始的秒数，是一个浮点数。  
+- time.clock()在Unix上返回当前处理器的时间。
+
+- time.gmtime([secs])  把秒数转化为GMT时间，返回time.struct_time。  
+  gmtime(0) 返回unix时间，1970年1月1日。
+
+- time.localtime([secs]) 将秒数转化为本地时间，返回 time.struct_time。   (tm_year=2013, tm_mon=3, tm_mday=28, tm_hour=14, tm_min=48, tm_sec=26, tm_wday=3, tm_yday=87, tm_isdst=0) 
+
+- time.mktime(t) localtime()的逆过程，参数为 struct_time or full 9-tuple。返回时间截，一个类似time.time() 一样的浮点数。
+
+- time.asctime([t]) 把  gmtime() 或  localtime() 返回的tunple 或struct_time 转化为本地时间字符串。如果未指定t,则使用 localtime() 。如：'Sun Jun 20 23:21:05 1993'。
+- time.ctime([secs]) 把秒数表示为当前本地时间字符串。如果未指定参数，则使用time().'Thu Mar 28 14:43:37 2013'   
+
+- time.sleep(secs)  暂停当前线程指定的秒数。参数可以是浮点数。
+
+
+
+- time.strftime(format[, t]) 格式化时间为字符串, 把 gmtime() or localtime() 返回的tunple 或 struct_time  进行格式化。
+- time.strptime(string[, format]) 将字符串转化为时间，返回struct_time
 
 当前时间的两种方式   
 time.strftime("%Y-%m-%d %H:%M:%S")  

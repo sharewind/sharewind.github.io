@@ -129,6 +129,29 @@ TProtocol传输协议用来指定数据序列化的格式，例如JSON，XML或�
 * TSimpleJSONProtocol – 这种节约只提供JSON只写的协议，适用于通过脚本语言解析
 * TDebugProtocol – 在开发的过程中帮助开发人员调试用的，以文本的形式展现方便阅读。
 
+
+#####Scheme
+
+Scheme 实现序列化、反序列化的接口中。每个Thrift对象（包括输入参数、返回值）都实现该方法，从而达到序列化到指定的协议中去，或者从指定的协议中读出对象。
+	
+	public interface IScheme<T extends TBase> {
+	
+	  public void read(org.apache.thrift.protocol.TProtocol iproto, T struct) throws org.apache.thrift.TException;
+	
+	  public void write(org.apache.thrift.protocol.TProtocol oproto, T struct) throws org.apache.thrift.TException;
+	
+	}	
+	
+	public interface SchemeFactory {	
+	  public <S extends IScheme> S getScheme();	
+	}
+	
+	public abstract class StandardScheme<T extends TBase> implements IScheme<T> {
+	
+	}
+
+
+
 #####Processor
 	
 Processor 用来服务端收到请求后，对传入的数据进行读取后，再写入到输出中。具体就是在服务端收到数据包后，根据输入协议TProtocol in 读取相应请求的方法和参数，调用具体实现服务的业务逻辑后，再将返回的结果写入TProtocol out中。
