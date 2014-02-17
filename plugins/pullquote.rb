@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 #
 # Author: Brandon Mathis
 # Based on the semantic pullquote technique by Maykel Loomans at http://miekd.com/articles/pull-quotes-with-html5-and-css/

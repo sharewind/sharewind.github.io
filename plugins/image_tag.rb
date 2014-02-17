@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # Title: Simple Image tag for Jekyll
 # Authors: Brandon Mathis http://brandonmathis.com
 #          Felix Schäfer, Frederic Hemberger

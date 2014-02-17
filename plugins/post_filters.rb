@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Jekyll
 
   # Extended plugin type that allows the plugin

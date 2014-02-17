@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'pygments'
 require 'fileutils'
 require 'digest/md5'

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 #custom filters for Octopress
 require './plugins/backtick_code_block'
 require './plugins/post_filters'

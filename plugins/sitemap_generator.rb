@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # Sitemap.xml Generator is a Jekyll plugin that generates a sitemap.xml file by
 # traversing all of the available posts and pages.
 #

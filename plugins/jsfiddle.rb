@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # Title: jsFiddle tag for Jekyll
 # Author: Brian Arnold (@brianarn)
 # Description:
