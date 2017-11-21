@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="keywords" content=" 耐克赤足系列 耐克赤足2.0 3.0 4.0 5.0 7.0 耐克赤足跑鞋 耐克赤足二代 耐克编织跑鞋 耐克飞线系列 耐克飞线彩虹 耐克飞线气垫      耐克飞线价格 耐克飞线2014 耐克飞线鞋 耐克飞线登月 耐克飞线科技 耐克飞线2015 耐克登月系列 耐克登月3 4 5 6耐克登月系列跑步鞋 耐克阿甘鞋 耐克2013气垫鞋        耐克2014全掌气垫鞋 耐克2015气垫鞋 耐克max90高板反毛皮跑鞋" />
+  <meta name="description" content="莆田批发高仿真标耐克系列跑鞋 耐克赤足滴塑新科技超轻NIKE FREE 5.0 耐克Nike Roshe Flyknit新款跑鞋 耐克2013磨砂皮            耐克赤足Nike Free 4.0 Flyknit赤足跑鞋 耐克登月6跑鞋 耐克2013男鞋 Nike Solarsoft Moccasin Woven 编织纹 超轻跑步鞋太阳神反毛皮 耐克2014飞线 耐克2015飞线      耐克登月NIKE FLYKNIT LUNAR2+编织版  耐克2013 耐克20K6代 7代 耐克87代系列轻量跑鞋" />
+  
+  <title>nsq introduction | sharewind coder blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="NSQ a realtime distributed messaging platform一个实时的分布式消息平台 ####Introduction 介绍NSQ is a realtime distributed messaging platform designed to operate at bitly’s sca">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nsq introduction">
+<meta property="og:url" content="http://yoursite.com/2014/02/17/nsq-introduction/index.html">
+<meta property="og:site_name" content="sharewind coder blog">
+<meta property="og:description" content="NSQ a realtime distributed messaging platform一个实时的分布式消息平台 ####Introduction 介绍NSQ is a realtime distributed messaging platform designed to operate at bitly’s scale, handling billions of messages per da">
+<meta property="og:updated_time" content="2014-03-20T03:06:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="nsq introduction">
+<meta name="twitter:description" content="NSQ a realtime distributed messaging platform一个实时的分布式消息平台 ####Introduction 介绍NSQ is a realtime distributed messaging platform designed to operate at bitly’s scale, handling billions of messages per da">
+  
+    <link rel="alternate" href="/atom.xml" title="sharewind coder blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">sharewind coder blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-nsq-introduction" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/02/17/nsq-introduction/" class="article-date">
+  <time datetime="2014-02-17T14:24:00.000Z" itemprop="datePublished">2014-02-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/NSQ-golang/">NSQ golang</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      nsq introduction
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>NSQ</p>
+<p>a realtime distributed messaging platform<br>一个实时的分布式消息平台</p>
+<p>####Introduction 介绍<br>NSQ is a realtime distributed messaging platform designed to operate at bitly’s scale, handling billions of messages per day (current peak of 90k+ messages per second).<br>NSQ是一个实时的分布式消息平台，被设计用来承载 bitly 处理每天数十亿的消息（每秒90k+的峰值）。</p>
+<p>It promotes distributed and decentralized topologies without single points of failure, enabling fault tolerance and high availability coupled with a reliable message delivery guarantee. See features &amp; guarantees.<br>它提升了分布式和分散式拓扑结构，避免了单点故障。通过容错性和高可用性来保障消息的传达。请参阅特性和保证。</p>
+<p>Operationally, NSQ is easy to configure and deploy (all parameters are specified on the command line and compiled binaries have no runtime dependencies). For maximum flexibility, it is agnostic to data format (messages can be JSON, MsgPack, Protocol Buffers, or anything else). Official Go and Python libraries are available out of the box and, if you’re interested in building your own client, there’s a protocol spec (see client libraries).<br>使用上，NSQ易于配置和部署（所有参数都指定在命令行和编译的二进制文件没有运行时依赖）。为了获得最大的灵活性，它是不可知的数据格式（消息可以是JSON，MsgPack，Protocol Buffers，或其他任何东西）。官方的go和Python库可开箱即用，如果你有兴趣建立自己的客户端，这里有一个协议规范（参见客户端库）。</p>
+<p>####Features &amp; Guarantees  特性与保证</p>
+<p>Features特性    </p>
+<ul>
+<li>support distributed topologies with no SPOF<br>支持分布式拓扑，没有单点故障  </li>
+<li>horizontally scalable (no brokers, seamlessly add more nodes to the cluster)<br>横向拓展（没有brokers, 无缝地往集群里添加更多节点）  </li>
+<li>low-latency push based message delivery (performance)<br>基于推送的低延迟消息传递（性能）  </li>
+<li>combination load-balanced and multicast style message routing<br>结合负载平衡和组播方式的消息路由  </li>
+<li>excel at both streaming (high-throughput) and job oriented (low-throughput) workloads<br>同时擅长于流（高流量）与工作导向（低流量）工作负载  </li>
+<li>primarily in-memory (beyond a high-water mark messages are transparently kept on disk)<br>主要是在内存中（超过上限的消息将被透明地保存在磁盘上）  </li>
+<li>runtime discovery service for consumers to find producers (nsqlookupd)<br>运行发现服务，为消费者找到生产者（nsqlookupd）  </li>
+<li>transport layer security (TLS)<br>传输层安全协议（TLS）  </li>
+<li>data format agnostic<br>数据格式无关  </li>
+<li>few dependencies (easy to deploy) and a sane, bounded, default configuration<br>没有依赖（易于部署），附有一个健全的，限定的默认配置  </li>
+<li>simple TCP protocol supporting client libraries in any language<br>支持任何语言客户端库的简单TCP协议  </li>
+<li>HTTP interface for stats, admin actions, and producers (no client library needed to publish)<br>HTTP接口进行统计，管理操作和生产（无需客户端库发布）  </li>
+<li>integrates with statsd for realtime instrumentation<br>集成了statsd用于实时监控  </li>
+<li>robust cluster administration interface (nsqadmin)<br>强大的集群管理界面（nsqadmin）  </li>
+</ul>
+<p>####Guarantees保证</p>
+<p>As with any distributed system, achieving your goal is a matter of making intelligent tradeoffs. By being transparent about the reality of these tradeoffs we hope to set expectations about how NSQ will behave when deployed in production.<br>正如任何分布式系统，你的目标是实现智能权衡。透过高透明度有关这些权衡，我们希望设置NSQ在生产环境部署的的预期行为。</p>
+<p>messages are not durable (by default)<br>默认情况下消息不进行持久化。</p>
+<p>Although the system supports a “release valve” (–mem-queue-size) after which messages will be transparently kept on disk, it is primarily an in-memory messaging platform.<br>虽然该系统支持超过“阈值”（–mem-queue-size）的值之后，信息将被透明地保存在磁盘上，但它主要是一个内存中的消息传递平台。</p>
+<p>–mem-queue-size can be set to 0 to to ensure that all incoming messages are persisted to disk. In this case, if a node failed, you are susceptible to a reduced failure surface (i.e. did the OS or underlying IO subsystem fail).<br>–mem-queue-size值可以设置为0，以确保所有传入的消息被保存到磁盘上。在这种情况下，如果一个节点失败，则很容易减小遭受的损失（即没操作系统或底层IO子系统失败）。</p>
+<p>There is no built in replication. However, there are a variety of ways this tradeoff is managed such as deployment topology and techniques which actively slave and persist topics to disk in a fault-tolerant fashion.<br>没有内置的复制。但是，也有各种折衷的管理方式，诸如配置从节点，并把topics持久化到硬盘上的部署与拓扑方式。</p>
+<p>messages are delivered at least once<br>消息至少传递一次  </p>
+<p>Closely related to above, this assumes that the given nsqd node does not fail.<br>与上述密切相关的是，这里假设给定nsqd节点不会失败。</p>
+<p>This means, for a variety of reasons, messages can be delivered multiple times (client timeouts, disconnections, requeues, etc.). It is the client’s responsibility to perform idempotent operations or de-dupe.<br>这意味着，由于各种原因，消息可能会被传送多次（客户端超时，断线，对其重新排队，等等）。客户端承担起履行幂等操作或重复数据删除的责任。</p>
+<p>messages received are un-ordered<br>消息的接收是无序的  </p>
+<p>You cannot rely on the order of messages being delivered to consumers.<br>你不能依赖于消息传递到消费者的顺序。  </p>
+<p>Similar to message delivery semantics, this is the result of requeues, the combination of in-memory and on disk storage, and the fact that each nsqd node shares nothing.<br>类似的消息传递语义，这是对其重新排队的结果，结合了内存和磁盘上的存储，每个nsqd节点间不共享任何内容。</p>
+<p>It is relatively straightforward to achieve loose ordering (i.e. for a given consumer its messages are ordered but not across the cluster as a whole) by introducing a window of latency in your consumer to accept messages and order them before processing (although, in order to preserve this invariant one must drop messages falling outside that window).<br>这里有一个比较简单的实现松散的顺序（即对于一个给定的消费者它的消息是有序的，但不是以整个集群作为一个整体）通过引入一个延迟窗口，在您的消费者接受信息，并在处理之前排序（虽然，为了保持顺序不变必须抛弃在窗口之外的消息）。</p>
+<p>consumers eventually find all topic producers<br>消费者最终会发现所有topic的生产者。  </p>
+<p>The discovery service (nsqlookupd) is designed to be eventually consistent. nsqlookupd nodes do not coordinate to maintain state or answer queries.<br>发现服务（nsqlookupd）被设计为最终一致。nsqlookupd节点并不需要互相协调来保持状态或回复查询。</p>
+<p>Network partitions do not affect availability in the sense that both sides of the partition can still answer queries. Deployment topology has the most significant effect of mitigating these types of issues.<br>网络分区不影响可用性，分区双方仍然可以回复查询。部署拓扑结构能在很大程度减轻这类问题。</p>
+<p>###FAQ</p>
+<p>####Deployment部署</p>
+<p>What is the recommended topology for nsqd?<br>推荐的nsqd拓扑结构是什么样的？</p>
+<p>We strongly recommend running an nsqd alongside any service(s) that produce messages.<br>我们强烈建议nsqd与任何产生消息的服务一起运行。  </p>
+<p>nsqd is a relatively lightweight process with a bounded memory footprint, which makes it well suited to “playing nice with others”.<br>nsqd是一个占用有限内存的相对轻量级进程，这使得它非常适合于“playing nice with others”。</p>
+<p>This pattern aids in structuring message flow as a consumption problem rather than a production one.<br>这种模式构建消息流有利于消费问题，而不是一个生产问题。</p>
+<p>Another benefit is that it essentially forms an independent, sharded, silo of data for that topic on a given host.<br>另一个好处是，它本质上形成一个独立，分片，筒仓的数据对于一个给定主机上的topic。</p>
+<p>NOTE: this isn’t an absolute requirement though, it’s just simpler (see question below).<br>注意：这不是一个绝对的要求，虽然，它只是简单的（见下面的问题）。</p>
+<p>Why can’t nsqlookupd be used by producers to find where to publish to?<br>为什么不能nsqlookupd使用由生产者来找到在哪里发布到？</p>
+<p>NSQ promotes a consumer-side discovery model that alleviates the upfront configuration burden of having to tell consumers where to find the topic(s) they need.<br>NSQ提供了消费者发现模型，降低了消息者找到所需 topic 之前的前期配置负担。  </p>
+<p>However, it does not provide any means to solve the problem of where a service should publish to. This is a chicken and egg problem, the topic does not exist prior to the first publish.<br>然而，它不提供任何手段来解决一个服务应发布到哪的问题。这是一个鸡和蛋的问题，topic 不会在第一个发布之前存在。</p>
+<p>By co-locating nsqd (see question above), you sidestep this problem entirely (your service simply publishes to the local nsqd) and allow NSQ’s runtime discovery system to work naturally.<br>通过协同定位nsqd（见上面的问题），你完全回避这个问题（您的服务只是发布到本地nsqd），并允许NSQ运行时发现系统自然工作。</p>
+<p>I just want to use nsqd as a work queue on a single node, is that a suitable use case?<br>我只是想用nsqd作为单个节点的工作队列，是一个合适的用例？  </p>
+<p>Yep, nsqd can run standalone just fine.<br>是的，独立运行nsqd就好了。</p>
+<p>nsqlookupd is beneficial in larger distributed environments.<br>nsqlookupd 有利于在更大的分布式环境。</p>
+<p>How many nsqlookupd should I run?<br>我需要启动多少个nsqlookupd？</p>
+<p>Typically only a few depending on your cluster size, number of nsqd nodes and consumers, and your desired fault tolerance.<br>通常只要几个，取决于你集群大小，nsqd节点和消费者的数目，以及您需要的容错性。</p>
+<p>3 or 5 works really well for deployments involving up to several hundred hosts and thousands of consumers.<br>3或5个就能够为部署上百的主机与数千的消费者工作很好。</p>
+<p>nsqlookupd nodes do not require coordination to answer queries. The metadata in the cluster is eventually consistent.<br>nsqlookupd节点并没有需要协调来回答查询。集群中的元数据是最终一致。</p>
+<p>####Publishing发布消息</p>
+<p>Do I need a client library to publish messages?<br>是否需要一个客户端库发布消息？</p>
+<p>NO! Just use the HTTP endpoints for publishing (/pub and /mpub). It’s simple, it’s easy, and it’s ubiquitous in almost any programming environment.</p>
+<p>In fact, the overwhelming majority of NSQ deployments use HTTP to publish.<br>事实上，绝大多数NSQ部署使用HTTP进行发布。  </p>
+<p>Why force a client to handle responses to the TCP protocol’s PUB and MPUB commands?<br>为什么要强制客户端处理响应TCP协议的PUB和MPUB命令？</p>
+<p>We believe NSQ’s default mode of operation should prioritize safety and we wanted the protocol to be simple and consistent.<br>我们认为NSQ的默认模式应优先考虑安全性，我们希望协议是简单和一致。</p>
+<p>When can a PUB or MPUB fail?<br>何时PUT 或 MPU 会失败？</p>
+<ol>
+<li>The topic name is not formatted correctly (to character/length restrictions). See the topic and channel name spec.<br>topic名称格式不正确（以字符/长度的限制）。请参阅topic和channel名称规范。  </li>
+<li>The message is too large (this limit is exposed as a parameter to nsqd).<br>该消息是太大（这个限制是作为参数传递给nsqd）  </li>
+<li>The topic is in the middle of being deleted.<br>主题是在被删除中。  </li>
+<li>nsqd is in the middle of cleanly exiting.<br>nsqd正在退出中。  </li>
+<li>Any client connection-related failures during the publish.<br>发布时任何客户端连接相关的故障。  </li>
+</ol>
+<p>(1) and (2) should be considered programming errors. (3) and (4) are rare and (5) is a natural part of any TCP based protocol.<br>（1）和（2）应当考虑的编程错误。（3）和（4）是罕见的，（5）是任何基于TCP协议的一个自然组成部分。  </p>
+<p>How can I mitigate scenario (3) above?<br>我怎样才能减轻上述场景（3）？  </p>
+<p>Deleting topics is a relatively infrequent operation. If you need to delete a topic, orchestrate the timing such that publishes eliciting topic creations will never be performed until a sufficient amount of time has elapsed since deletion.<br>删除topic是一个相对较少的操作。如果你需要删除一个主题，编排，使得publish引出话题的作品将永远，直到时间足够量的自删除已经过去执行的时机。</p>
+<p>####Design and Theory设计与理念</p>
+<p>How do you recommend naming topics and channels?<br>你推荐如何命令topics和channels?  </p>
+<p>A topic name should describe the data in the stream.<br>一个 topic name 应该描述流里的数据。  </p>
+<p>A channel name should describe the work performed by its consumers.<br>一个channel name 应该描述消费者执行的工作。</p>
+<p>For example, good topic names are encodes, decodes, api_requests, page_views and good channel names are archive, analytics_increment, spam_analysis.</p>
+<p>Are there any limitations to the number of topics and channels a single nsqd can support?<br>是否有单个nsqd结点上支持topics和channels的数量上限？</p>
+<p>There are no built-in limits imposed. It is only limited by the memory and CPU of the host nsqd is running on (per-client CPU usage was greatly reduced in issue #236).<br>有没有内置强加的限制。它仅受限于运行nsqd 的主机内存和CPU（每客户端CPU占用率大大降低在问题＃236）。</p>
+<p>How are new topics announced to the cluster?<br>如何新topic发布到集群？</p>
+<p>The first PUB or SUB to a topic will create the topic on an nsqd. Topic metadata will then propagate to the configured nsqlookupd. Other readers will discover this topic by periodically querying the nsqlookupd.<br>在topic 上的第一个 PUB或SUB 将在nsqd上创建 topic。然后topic的元数据将传播到配置nsqlookupd。其它readers 将通过定期查询nsqlookupd发现这个topic。</p>
+<p>Can NSQ do RPC?<br>NSQ可以用来做RPC？</p>
+<p>Yes, it’s possible, but NSQ was not designed with this use case in mind.<br>是的，这是可以的，但NSQ最初并没有设计这个用例。</p>
+<p>We intend to publish some docs on how this could be structured but in the meantime reach out if you’re interested.</p>
+
+      
+    </div>
+    <footer class="article-footer2">
+      <div id="footer-info" class="inner">
+        <a href="http://www.618shoe.com/">莆田1:1精仿鞋微信号</a>
+        <a href="http://www.618shoe.com/">莆田高仿鞋子的价格表</a>
+        <a href="http://www.618shoe.com/">关于莆田仿鞋</a>
+        <a href="http://www.618shoe.com/">莆田高仿鞋淘宝店店名</a>
+        <a href="http://www.618shoe.com/">莆田精仿鞋官网</a>
+         咨询QQ：<a title="点击这里给我发消息" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2727291807&amp;site=www.cactussoft.cn&amp;menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=2:2727291807:41"></a>
+      </div>
+        <div id="footer-info" class="inner">
+          <a href="http://www.618shoe.com/">莆田高仿鞋批发</a>&nbsp;&nbsp;
+          <a href="http://www.618shoe.com/">1：1高仿鞋批发</a>&nbsp;&nbsp;
+          <a href="http://www.618shoe.com/">高仿鞋批发市场</a>&nbsp;&nbsp;
+          <a href="http://www.618shoe.com/">高仿鞋网</a>&nbsp;&nbsp;
+          <a href="http://www.618shoe.com/">广州高仿鞋批发</a>&nbsp;&nbsp;
+          <a href="http://www.618shoe.com/">外贸尾单鞋批发</a>&nbsp;&nbsp;
+          <a href="http://www.618shoe.com/">精仿鞋专线</a>&nbsp;&nbsp;
+      </div>
+      <div id="footer-info" class="inner">
+             <a href="http://www.618shoe.com/">莆田高仿鞋批发</a>&nbsp;&nbsp;
+             公司网站:&nbsp;&nbsp;<a href="http://www.618shoe.com//" target="_blank">http://www.618shoe.com/</a>&nbsp;&nbsp;
+             <a href="http://www.618shoe.com/">高仿鞋批发市场</a>
+             微信 <img src="/pics/qrcode.jpg" style="width:100px;height:100px;">
+      </div>
+    </footer>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/02/17/nsq-introduction/" data-id="cja9pxgg2002vkk5ig8ueoyhu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/02/18/nsq-design/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          nsq design
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/08/29/hacker-tools/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">程序员的工具箱</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Architecture/">Architecture</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DevTools/">DevTools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DevTools-Eclipse/">DevTools Eclipse</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Btrace/">Java Btrace</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-JVM/">Java JVM</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-MultiThreading/">Java MultiThreading</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-NIO/">Java NIO</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Reflection/">Java Reflection</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Unicode/">Java Unicode</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux-Shell/">Linux Shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MongoDB/">MongoDB</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/NSQ-golang/">NSQ golang</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Solr/">Solr</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Solr-Lucene/">Solr Lucene</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unicode-Python/">Unicode Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git-DevTools/">git DevTools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jafka-zookeeper/">jafka zookeeper</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jsonp-security/">jsonp security</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/thrift/">thrift</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/zookeeper/">zookeeper</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/11/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/16/process-task-by-queue/">process task by queue</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/15/threadpoolexecutor/">ThreadPoolExecutor 学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2014/02/19/nsq-internals/">nsq internals</a>
+          </li>
+        
+          <li>
+            <a href="/2014/02/18/nsq-design/">nsq design</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+ 	<div id="footer-info" class="inner">
+     咨询QQ：<a title="点击这里给我发消息" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2727291807&amp;site=www.cactussoft.cn&amp;menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=2:2727291807:41"></a>
+ 	</div>
+   	<div id="footer-info" class="inner">
+     	<a href="http://www.618shoe.com/">莆田高仿鞋批发</a>&nbsp;&nbsp;
+     	<a href="http://www.618shoe.com/">1：1高仿鞋批发</a>&nbsp;&nbsp;
+     	<a href="http://www.618shoe.com/">高仿鞋批发市场</a>&nbsp;&nbsp;
+     	<a href="http://www.618shoe.com/">高仿鞋网</a>&nbsp;&nbsp;
+     	<a href="http://www.618shoe.com/">广州高仿鞋批发</a>&nbsp;&nbsp;
+    	<a href="http://www.618shoe.com/">外贸尾单鞋批发</a>&nbsp;&nbsp;
+    	<a href="http://www.618shoe.com/">精仿鞋专线</a>&nbsp;&nbsp;
+	</div>
+ 	<div id="footer-info" class="inner">
+         <a href="http://www.618shoe.com/">莆田高仿鞋批发微信号</a>&nbsp;&nbsp;
+         公司网站:&nbsp;&nbsp;<a href="http://www.618shoe.com//" target="_blank">http://www.618shoe.com/</a>&nbsp;&nbsp;
+         <a href="http://www.618shoe.com/">高仿鞋批发市场</a>
+         微信 <img src="/pics/qrcode.jpg" style="width:100px;height:100px;">
+ 	</div>
+    <div id="footer-info" class="inner">
+      &copy; 2017 Sharewind<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
