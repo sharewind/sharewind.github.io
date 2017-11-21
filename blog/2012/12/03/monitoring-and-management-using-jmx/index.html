@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="keywords" content=" 耐克赤足系列 耐克赤足2.0 3.0 4.0 5.0 7.0 耐克赤足跑鞋 耐克赤足二代 耐克编织跑鞋 耐克飞线系列 耐克飞线彩虹 耐克飞线气垫      耐克飞线价格 耐克飞线2014 耐克飞线鞋 耐克飞线登月 耐克飞线科技 耐克飞线2015 耐克登月系列 耐克登月3 4 5 6耐克登月系列跑步鞋 耐克阿甘鞋 耐克2013气垫鞋        耐克2014全掌气垫鞋 耐克2015气垫鞋 耐克max90高板反毛皮跑鞋" />
+  <meta name="description" content="莆田批发高仿真标耐克系列跑鞋 耐克赤足滴塑新科技超轻NIKE FREE 5.0 耐克Nike Roshe Flyknit新款跑鞋 耐克2013磨砂皮            耐克赤足Nike Free 4.0 Flyknit赤足跑鞋 耐克登月6跑鞋 耐克2013男鞋 Nike Solarsoft Moccasin Woven 编织纹 超轻跑步鞋太阳神反毛皮 耐克2014飞线 耐克2015飞线      耐克登月NIKE FLYKNIT LUNAR2+编织版  耐克2013 耐克20K6代 7代 耐克87代系列轻量跑鞋" />
+  
+  <title>使用JMX管理和监控JVM | sharewind coder blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JMX（Java Management Extensions，即Java管理扩展）是一个为应用程序、设备、系统等植入管理功能的框架。JMX可以跨越一系列异构操作系统平台、系统体系结构和网络传输协议，灵活的开发无缝集成的系统、网络和服务管理应用。 配置jmx1. 用户名密码的方式复制模板文件  cp $JAVA_HOME">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用JMX管理和监控JVM">
+<meta property="og:url" content="http://yoursite.com/blog/2012/12/03/monitoring-and-management-using-jmx/index.html">
+<meta property="og:site_name" content="sharewind coder blog">
+<meta property="og:description" content="JMX（Java Management Extensions，即Java管理扩展）是一个为应用程序、设备、系统等植入管理功能的框架。JMX可以跨越一系列异构操作系统平台、系统体系结构和网络传输协议，灵活的开发无缝集成的系统、网络和服务管理应用。 配置jmx1. 用户名密码的方式复制模板文件  cp $JAVA_HOME/jre/lib/management/jmxremote.password.t">
+<meta property="og:updated_time" content="2014-03-20T03:06:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用JMX管理和监控JVM">
+<meta name="twitter:description" content="JMX（Java Management Extensions，即Java管理扩展）是一个为应用程序、设备、系统等植入管理功能的框架。JMX可以跨越一系列异构操作系统平台、系统体系结构和网络传输协议，灵活的开发无缝集成的系统、网络和服务管理应用。 配置jmx1. 用户名密码的方式复制模板文件  cp $JAVA_HOME/jre/lib/management/jmxremote.password.t">
+  
+    <link rel="alternate" href="/atom.xml" title="sharewind coder blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">sharewind coder blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-monitoring-and-management-using-jmx" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2012/12/03/monitoring-and-management-using-jmx/" class="article-date">
+  <time datetime="2012-12-03T09:22:00.000Z" itemprop="datePublished">2012-12-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java-JVM/">Java JVM</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用JMX管理和监控JVM
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>JMX（Java Management Extensions，即Java管理扩展）是一个为应用程序、设备、系统等植入管理功能的框架。JMX可以跨越一系列异构操作系统平台、系统体系结构和网络传输协议，灵活的开发无缝集成的系统、网络和服务管理应用。</p>
+<h3 id="配置jmx"><a href="#配置jmx" class="headerlink" title="配置jmx"></a>配置jmx</h3><h4 id="1-用户名密码的方式"><a href="#1-用户名密码的方式" class="headerlink" title="1. 用户名密码的方式"></a>1. 用户名密码的方式</h4><p>复制模板文件</p>
+<pre>
+cp $JAVA_HOME/jre/lib/management/jmxremote.password.template /opt/conf/jmxreomte/jmxremote.password
+</pre>
+
+<p>配置示例</p>
+<pre>
+# The "monitorRole" role has password "QED".
+# The "controlRole" role has password "R&D".
+monitorRole QED
+controlRole R&D
+</pre>
+
+<p>权限配置</p>
+<p><pre><br>chown nobody.nobody jmxremote.password<br>chmod 600 jmxremote.password<br></pre><br>其中，chmod 600 jmxremote.password 等同于 chmod u=rw,g=-,o=- jmxremote.password</p>
+<h4 id="resin中的配置"><a href="#resin中的配置" class="headerlink" title="resin中的配置"></a>resin中的配置</h4><h6 id="1-默认开启jmxremote"><a href="#1-默认开启jmxremote" class="headerlink" title="1. 默认开启jmxremote"></a>1. 默认开启jmxremote</h6><pre><code>&lt;cluster-default&gt;
+    &lt;!-- sets the content root for the cluster, relative to server.root --&gt;
+    &lt;root-directory&gt;.&lt;/root-directory&gt;
+
+    &lt;server-default&gt;
+    &lt;!--
+        - The JVM arguments
+    --&gt;
+        &lt;jvm-arg&gt;-d64&lt;/jvm-arg&gt;
+        &lt;jvm-arg&gt;-Xmx4096m&lt;/jvm-arg&gt;
+        &lt;jvm-arg&gt;-Xms4096m&lt;/jvm-arg&gt;
+        &lt;jvm-arg&gt;-Xmn1536m&lt;/jvm-arg&gt;
+        &lt;jvm-arg&gt;-Xss2m&lt;/jvm-arg&gt;
+        &lt;jvm-arg&gt;-Xdebug&lt;/jvm-arg&gt;
+        &lt;jvm-arg&gt;-XX:MaxPermSize=512m&lt;/jvm-arg&gt;
+        &lt;jvm-arg&gt;-Dcom.sun.management.jmxremote&lt;/jvm-arg&gt;
+        &lt;jvm-arg&gt;-Dcom.sun.management.jmxremote.ssl=false&lt;/jvm-arg&gt;
+        &lt;jvm-arg&gt;-Dcom.sun.management.jmxremote.authenticate=true&lt;/jvm-arg&gt;
+</code></pre><h6 id="2-具体实例监听的IP与端口"><a href="#2-具体实例监听的IP与端口" class="headerlink" title="2.具体实例监听的IP与端口"></a>2.具体实例监听的IP与端口</h6><pre><code>&lt;cluster id=&quot;cluster-01&quot;&gt;
+    &lt;server id=&quot;server-01&quot; address=&quot;127.0.0.1&quot; port=&quot;6801&quot;&gt;
+        &lt;http address=&quot;192.168.1.10&quot; port=&quot;8081&quot; /&gt;
+        &lt;jvm-arg&gt;-Djava.rmi.server.hostname=192.168.1.10&lt;/jvm-arg&gt;
+        &lt;jvm-arg&gt;-Dcom.sun.management.jmxremote.port=9081&lt;/jvm-arg&gt;
+        &lt;jvm-arg&gt;-Dcom.sun.management.jmxremote.password.file=/opt/conf/jmxremote/jmxremote.password&lt;/jvm-arg&gt;
+    &lt;/server&gt;
+</code></pre><p>#####3. 命令行配置</p>
+<pre><code>JMXREMOTE=&quot; -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname=192.168.1.10 -Dcom.sun.management.jmxremote.port=9081 &quot;
+java ${JMXREMOTE} Main
+</code></pre><h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><ul>
+<li><a href="http://docs.oracle.com/javase/1.5.0/docs/guide/management/agent.html" target="_blank" rel="noopener">Monitoring and Management Using JMX</a></li>
+<li><a href="http://docs.oracle.com/javase/6/docs/technotes/guides/management/agent.html#gdeum" target="_blank" rel="noopener"> Monitoring and Management Properties</a> - jmxremote 的属性及默认值</li>
+<li><a href="http://baike.baidu.com/view/866268.htm" target="_blank" rel="noopener">百度百科-JMX </a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer2">
+      <div id="footer-info" class="inner">
+        <a href="http://www.618shoe.com/">莆田1:1精仿鞋微信号</a>
+        <a href="http://www.618shoe.com/">莆田高仿鞋子的价格表</a>
+        <a href="http://www.618shoe.com/">关于莆田仿鞋</a>
+        <a href="http://www.618shoe.com/">莆田高仿鞋淘宝店店名</a>
+        <a href="http://www.618shoe.com/">莆田精仿鞋官网</a>
+         咨询QQ：<a title="点击这里给我发消息" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2727291807&amp;site=www.cactussoft.cn&amp;menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=2:2727291807:41"></a>
+      </div>
+        <div id="footer-info" class="inner">
+          <a href="http://www.618shoe.com/">莆田高仿鞋批发</a>&nbsp;&nbsp;
+          <a href="http://www.618shoe.com/">1：1高仿鞋批发</a>&nbsp;&nbsp;
+          <a href="http://www.618shoe.com/">高仿鞋批发市场</a>&nbsp;&nbsp;
+          <a href="http://www.618shoe.com/">高仿鞋网</a>&nbsp;&nbsp;
+          <a href="http://www.618shoe.com/">广州高仿鞋批发</a>&nbsp;&nbsp;
+          <a href="http://www.618shoe.com/">外贸尾单鞋批发</a>&nbsp;&nbsp;
+          <a href="http://www.618shoe.com/">精仿鞋专线</a>&nbsp;&nbsp;
+      </div>
+      <div id="footer-info" class="inner">
+             <a href="http://www.618shoe.com/">莆田高仿鞋批发</a>&nbsp;&nbsp;
+             公司网站:&nbsp;&nbsp;<a href="http://www.618shoe.com//" target="_blank">http://www.618shoe.com/</a>&nbsp;&nbsp;
+             <a href="http://www.618shoe.com/">高仿鞋批发市场</a>
+             微信 <img src="/pics/qrcode.jpg" style="width:100px;height:100px;">
+      </div>
+    </footer>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/blog/2012/12/03/monitoring-and-management-using-jmx/" data-id="cja9reqss0003if5ire0gyp65" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2012/12/06/git-command/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          git 常用命令
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2012/12/03/hello-btrace/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">BTrace 简介</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Architecture/">Architecture</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DevTools/">DevTools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DevTools-Eclipse/">DevTools Eclipse</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Btrace/">Java Btrace</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-JVM/">Java JVM</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-MultiThreading/">Java MultiThreading</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-NIO/">Java NIO</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Reflection/">Java Reflection</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Unicode/">Java Unicode</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux-Shell/">Linux Shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MongoDB/">MongoDB</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/NSQ-golang/">NSQ golang</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Solr/">Solr</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Solr-Lucene/">Solr Lucene</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unicode-Python/">Unicode Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git-DevTools/">git DevTools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jafka-zookeeper/">jafka zookeeper</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jsonp-security/">jsonp security</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/thrift/">thrift</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/zookeeper/">zookeeper</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2017/11/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2015/01/16/process-task-by-queue/">process task by queue</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2015/01/15/threadpoolexecutor/">ThreadPoolExecutor 学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2014/02/19/nsq-internals/">nsq internals</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2014/02/18/nsq-design/">nsq design</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+ 	<div id="footer-info" class="inner">
+     咨询QQ：<a title="点击这里给我发消息" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2727291807&amp;site=www.cactussoft.cn&amp;menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=2:2727291807:41"></a>
+ 	</div>
+   	<div id="footer-info" class="inner">
+     	<a href="http://www.618shoe.com/">莆田高仿鞋批发</a>&nbsp;&nbsp;
+     	<a href="http://www.618shoe.com/">1：1高仿鞋批发</a>&nbsp;&nbsp;
+     	<a href="http://www.618shoe.com/">高仿鞋批发市场</a>&nbsp;&nbsp;
+     	<a href="http://www.618shoe.com/">高仿鞋网</a>&nbsp;&nbsp;
+     	<a href="http://www.618shoe.com/">广州高仿鞋批发</a>&nbsp;&nbsp;
+    	<a href="http://www.618shoe.com/">外贸尾单鞋批发</a>&nbsp;&nbsp;
+    	<a href="http://www.618shoe.com/">精仿鞋专线</a>&nbsp;&nbsp;
+	</div>
+ 	<div id="footer-info" class="inner">
+         <a href="http://www.618shoe.com/">莆田高仿鞋批发微信号</a>&nbsp;&nbsp;
+         公司网站:&nbsp;&nbsp;<a href="http://www.618shoe.com//" target="_blank">http://www.618shoe.com/</a>&nbsp;&nbsp;
+         <a href="http://www.618shoe.com/">高仿鞋批发市场</a>
+         微信 <img src="/pics/qrcode.jpg" style="width:100px;height:100px;">
+ 	</div>
+    <div id="footer-info" class="inner">
+      &copy; 2017 Sharewind<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
